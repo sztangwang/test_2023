@@ -1,0 +1,11 @@
+devices:
+  17089c4a:
+    device_id: 17089c4a
+    device_type: UNKNOWN
+    ip: 192.168.44.213
+    status: IDLE
+  1708d644:
+    device_id: 1708d644
+    device_type: UNKNOWN
+    ip: 192.168.44.136
+    status: IDLE

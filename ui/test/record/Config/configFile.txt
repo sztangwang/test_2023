@@ -1,0 +1,26 @@
+
+ImageExceptionContinue=已关闭#用于图像对比异常继续开关设置
+main_window_height=1170#主窗口高度
+main_window_width=1886#主窗口宽度
+splitter_width=1614#splitter宽度
+splitter_height=480#splitter高度
+script_file=record_0323201440.986483.json#树选择文件列表展示
+background_color=f1f1f1#背景颜色
+font_color=151515#字体颜色
+pc_resolving_wide=2880#电脑分辨率宽
+regional_image_comp=300#区域图像对比值
+console_font=True#用于控制台字体颜色白色转换为黑色
+screen_width=720#屏幕中心宽
+screen_height=450#屏幕中心高
+ip=192.168.8.118#ip地址
+serial_test_post=#串口测试端口号
+settings_list_select=0#设置选中行
+camera=0#内置相机0，外置摄像1
+treeFile_item=4#目录树默认选中文件item目录树默认选中文件item
+Ac_Port=12#Ac端口
+card_screen=1920x1080#采集卡分辨率
+loop_num=10000#设置循环次数
+is_image_view=adb#开启什么图像模式
+camera_name=1:Integrated Camera#摄像头名称
+CurrentDevice=1708fa47#设备选择号
+

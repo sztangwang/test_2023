@@ -1,0 +1,1 @@
+root_path = r"D:\python-workspace\Windows_Agent\compoment\atx2agent\core"

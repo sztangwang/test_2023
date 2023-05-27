@@ -1,0 +1,80 @@
+# 测试用例：测试网易云音乐搜索音乐功能
+pages:
+  - page:
+      pageName: "launcher_home"
+      desc: "首页"
+      locators:
+        - { name: "photo_btn", desc: "拍照" ,type: "text", value: "拍照" }
+        - { name: "video_btn", desc: "录像", type: "text", value: "录像" }
+        - { name: "live_btn", desc: "直播" ,type: "text", value: "直播" }
+        - { name: "quite_live", desc : "关闭直播",type : "resourceId", value: "com.hollyland.cameralive:id/iv_living_quite"}
+        - { name: "beauty_btn", desc: "美颜按钮", type: "xpath", value: '//*[@resource-id="com.hollyland.cameralive:id/btn_beauty"]' }
+        - { name: "living_btn", desc: "点击直播", type: "resourceId", value: 'com.android.systemui:id/holly_qs_living_btn' }
+        - { name: "weiyi_index_img", desc: "底部导航栏-img",type: "Template",value: '{"filename":f"{BASE_DATA_PATH}/img/xxxxxx.png","record_pos":(-0.401, 0.993),"resolution":(1080, 2400)}',timeout: "10" }
+        - { name: "auto_rotation", desc: "自动旋转",type: "text",value: "自动旋转" }
+        - { name: "menu", desc: "主菜单",type: "text",value : "主菜单"}
+        - { name: "setting", desc: "设置",type: "text",value : "设置"}
+        - { name: "live", desc: "直播",type: "text",value : "直播"}
+        - { name: "hdmi", desc: "hdmi纯净输出",type: "text",value : "纯净输出"}
+        - { name: "uvc", desc: "UVC推流",type: "text",value : "UVC推流"}
+        - { name: "volume", desc: "音量柱",type: "text",value : "音量柱"}
+        - { name: "bt_switch", desc: "蓝牙" ,type: "text", value: "蓝牙" }
+        - { name: "begin_live_text", desc: "即将开始直播文本",type : "text", value: "即将开始直播"}
+        - { name: "addr_name",desc: "推流地址名称",type : "resourceId",value: "com.hollyland.cameralive:id/fl_bg"}
+        - { name: "click_btn",desc: "拍照，录像，直播三合一功能按钮",type: "resourceId",value: "com.hollyland.cameralive:id/btn_shutter"}
+        - { name: "quite_live_ok_text",desc: "退出直播确定", type: "text", value: "确定"}
+        - { name: "enter_live_fail_text", desc: "进入直播异常文本",type: "text", value : "知道了"}
+  - page:
+      pageName: "bt_page"
+      desc: "蓝牙页面"
+      locators:
+        - { name: "bt_switch", desc: "蓝牙开关" ,type: "resourceId", value: "com.android.settings:id/switch_widget" }
+        - { name: "bt_device", desc: "蓝牙设备名" ,type: "resourceId", value: "com.android.settings:id/tv_bluetooth_devcie_name" }
+        - { name: "live_btn", desc: "直播" ,type: "text", value: "直播" }
+        - { name: "device_name", desc: "设备名称" ,type: "text", value: "设备名称" }
+  - page:
+      pageName: "pushflow_address_page"
+      desc: "推流地址页面"
+      locators:
+        - { name: "handler_add_address_btn", desc: "手动添加推流地址", type: "text", value: "手动添加推流地址" }
+        - { name: "address_name", desc: "推流地址名称", type: "resourceId", value: "com.hollyland.cameralive:id/et_push_name" }
+        - { name: "pushflow_address_input", desc: "推流地址输入框", type: "resourceId", value: "com.hollyland.cameralive:id/et_push_address" }
+        - { name: "pushflow_address_key", desc: "推流地址秘钥输入框", type: "resourceId", value: "com.hollyland.cameralive:id/et_push_key" }
+        - { name: "complete_btn",desc: "完成设置",type : "text",value: "完成设置"}
+        - { name: "push_all_btn", desc: "推流地址页面全部按钮", type: "resourceId", value: "com.hollyland.cameralive:id/tv_header_end" }
+  - page:
+      pageName: "pushflow_platform_page"
+      desc: "推流平台选择页面"
+      locators:
+        - { name: "platform_name", desc: "推流平台名称", type: "resourceId", value: "com.hollyland.cameralive:id/tv_platform_name" }
+  - page:
+      pageName: "my_pushflow_address_page"
+      desc: "我的推流地址页面"
+      locators:
+        - { name: "add_addr_btn",desc: "添加推流地址按钮",type : "xpath",value: '//*[@resource-id="com.hollyland.cameralive:id/tv_add_channel"]/android.widget.LinearLayout[1]'}
+        - { name: "addr_name",desc: "推流地址名称",type : "resourceId",value: "com.hollyland.cameralive:id/fl_bg"}
+        - { name: "addr_title",desc: "推流地址标题",type : "xpath",value: '//androidx.recyclerview.widget.RecyclerView/android.widget.RelativeLayout/android.widget.TextView '}
+        - { name: "push_item_name",desc: "推流地址名称",type : "resourceId", value: "com.hollyland.cameralive:id/tv_push_item_name"}
+  - page:
+      pageName: "quick_setting_page"
+      desc: "快速设置页面"
+      locators:
+        - { name: "live_btn", desc: "直播", type: "text", value: "直播" }
+        - { name: "setting_btn", desc: "设置", type: "text", value: "设置" }
+        - { name: "wired_network", desc: "有线网络", type: "text", value: "有线网络" }
+        - { name: "about_camera", desc: "关于相机", type: "text", value: "关于相机" }
+  - page:
+      pageName: "about_camera_page"
+      desc: "关于相机页面"
+      locators:
+        - { name: "back_btn", desc: "设置返回键", type: "resourceId", value: "com.android.settings:id/action_bar_back" }
+  - page:
+      pageName: "setting_page"
+      desc: "设置页面"
+      locators:
+        - { name: "back_btn", desc: "设置返回键", type: "resourceId", value: "com.android.settings:id/action_bar_back" }
+        - { name: "screen_brightness", desc: "亮度条", type: "resourceId", value: "com.android.systemui:id/holly_qs_brightness_setting" }
+        - { name: "sound_column", desc: "音量条元素", type: "resourceId", value: "com.android.systemui:id/holly_qs_sounder_setting" }
+        - { name: "live_btn", desc: "直播", type: "text", value: "直播" }
+        - { name: "about_camera", desc: "关于相机", type: "text", value: "关于相机" }
+        - { name: "bluetooth", desc: "蓝牙", type: "text", value: "蓝牙" }

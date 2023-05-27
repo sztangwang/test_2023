@@ -1,0 +1,11 @@
+devices:
+  1708d644:
+    device_id: 1708d644
+    device_type: unknown
+    ip: 192.168.43.15
+    status: offline
+  192.168.69.102:5555:
+    device_id: 192.168.69.102:5555
+    device_type: unknown
+    ip: 192.168.69.102
+    status: offline

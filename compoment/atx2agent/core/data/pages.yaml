@@ -1,0 +1,14 @@
+# 测试用例：测试网易云音乐搜索音乐功能
+  - page:
+      pageName: netease_music_page
+      desc: 网易云音乐首页页面
+      locators:
+        - { name: day_portal, desc: 每日推荐的按钮 ,type: resourceId, value: com.android.systemui:id/holly_qs_living_btn }
+        - { name: day_portal1, desc: 每日推荐文字 ,type: resourceId, value: com.netease.cloudmusic:id/portalTitle }
+        - { name: day_portal2, desc: 每日推荐 ,type: text, value: 每日推荐 }
+
+  - page:
+     pageName: day_portal_page
+     desc: 每日推荐页面
+     locators:
+       - { name: first_music ,desc: 每日推荐第一个音乐的名字, type: text, value: STAY }

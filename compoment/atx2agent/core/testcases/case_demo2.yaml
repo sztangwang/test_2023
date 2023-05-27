@@ -1,0 +1,636 @@
+project:
+  name : 项目1
+  project_case_type: 项目的用例类型是UI用例
+  modules:
+    - module:
+        name : 模块名称1
+        cases:
+          - case:
+              caseId: 1
+              name: add_live_and_startlive
+              status: 开启
+              level: P0
+              desc: 添加直播和开启直播1
+              globalVal:
+                - { name: "push_url_name", value: "${{random_name}}" }
+                - { name: "push_url", value: "rtmp://192.168.69.109:1935/stream/pc_test_666" }
+                - { name: "timeout", value: "3" }
+              # 前置步骤：
+              presteps:
+                  - step:
+                      name: open_app
+                      desc: 打开app--------------------111
+                      action: open
+                      params:
+                          packageName: com.hollyland.cameralive
+                          activityName: com.hollyland.cameralive.ui.CameraLiveMainActivity
+                  - step:
+                      name: wait_loading
+                      desc: 等待页面加载完成-----------11111
+                      action: wait
+                      params:
+                          senconds: 3.0
+              # 后置步骤：
+              poststeps:
+                  - step:
+                      name: close_app------------1111111
+                      desc: 关闭应用
+                      action: close
+                      params:
+                          packageName: com.hollyland.cameralive
+              # 测试步骤：
+              steps:
+                # 点击每日推荐
+                  - step:
+                      name: notification
+                      desc: 下拉打开通知栏
+                      action: notification
+                      params:
+                        seconds: 1
+                  - step:
+                      name: click_live
+                      desc: 点击直播
+                      action: click
+                      locators:
+                        - { name: "live" ,locateDesc: "直播文本",locatorType: "text",locatorValue: '直播' }
+                        - { name: "live" ,locateDesc: "直播图标",locatorType: "resourceId",locatorValue: 'com.android.systemui:id/holly_qs_living_btn' }
+                  - step:
+                      name: click_add_push_btn
+                      desc: 点击添加推流地址按钮
+                      action: click
+                      locators:
+                        - { name: "add_push_url_btn" ,locateDesc: "添加推流地址按钮",locatorType: "resourceId",locatorValue: 'com.hollyland.cameralive:id/btn_beauty' }
+                  - step:
+                      name : click_add_push_url
+                      desc : 点击添加推流地址
+                      action : click
+                      locators:
+                        - { name: "add" ,locateDesc: "添加推流地址",locatorType: "text",locatorValue: '添加推流地址' }
+                  - step:
+                      name : choose_manually_add_push_url
+                      desc: 选择手动添加推流地址
+                      action: click
+                      locators:
+                        - { name: "manual_add" ,locateDesc: "手动添加推流地址",locatorType: "text",locatorValue: '手动添加推流地址' }
+                  - step:
+                      name: input_push_url_name
+                      desc: 输入推流地址名称
+                      action: input
+                      locators:
+                        - { name: "input_name" ,locateDesc: "输入推流地址",locatorType: "xpath",locatorValue: '//*[@resource-id="com.hollyland.cameralive:id/lin_push_info_edit"]/android.widget.RelativeLayout[1]' }
+                      params:
+                          value: "${push_url_name}"
+                  - step:
+                      name: input_push_url
+                      desc: 输入推流地址
+                      action: input
+                      locators:
+                        - { name: "input_url" ,locateDesc: "输入推流地址",locatorType: "resourceId",locatorValue: 'com.hollyland.cameralive:id/et_push_address' }
+                      params:
+                          value: "${push_url}"
+                  - step:
+                      name: swipe_up
+                      desc: 向上滑动
+                      action: swipe_up
+                  - step:
+                      name: click_save
+                      desc: 点击保存,完成设置
+                      action: click
+                      locators:
+                        - { name: "save" ,locateDesc: "保存",locatorType: "resourceId",locatorValue: 'com.hollyland.cameralive:id/btn_save_channel' }
+                  - step:
+                      name: right_swipe
+                      desc: 右滑回到推流地址增加界面
+                      action: right_swipe
+                  - step:
+                      name: click_screen
+                      desc: 点击屏幕任意位置
+                      action: click_screen
+                      params:
+                          x: 180
+                          y: 300
+                  - step:
+                      name: assert_live_text
+                      desc: 断言直播界面元素文本是否存在
+                      action: assert_contains2
+                      locators:
+                        - { name: "assert_live" ,locateDesc: "断言直播界面是否有直播的文本出现",locatorType: "resourceId",locatorValue: 'com.hollyland.cameralive:id/tv_item_tab' }
+                        - { name: "assert_live" ,locateDesc: "断言直播界面是否有直播的图标出现",locatorType: "text",locatorValue: '直播' }
+                      params:
+                          actual: "直播"
+                          expected: "直播"
+                  - step:
+                      name: find_element
+                      desc: 查找元素是否存在当前页面
+                      action: find_elements
+                      locators:
+                        - { name: "live" ,locateDesc: "直播文本",locatorType: "resourceId",locatorValue: 'com.hollyland.cameralive:id/tv_item_tab' }
+                      params:
+                          timeout: 10
+                  - step:
+                      name: click_live_btn
+                      desc: 点击直播按钮
+                      action: click
+                      locators:
+                        - { name: "live_btn_shutter" ,locateDesc: "直播id",locatorType: "resourceId",locatorValue: 'com.hollyland.cameralive:id/btn_shutter' }
+                  - step:
+                      name: wait_5
+                      desc: 等待5秒
+                      action: wait
+                      params:
+                        senconds: 5
+                  - step:
+                      name : click_quit_live
+                      desc : 点击退出直播
+                      action : click
+                      locators:
+                        - { name: "live_btn_quite" ,locateDesc: "退出id",locatorType: "resourceId",locatorValue: 'com.hollyland.cameralive:id/iv_living_quite' }
+                  - step:
+                      name: click_btn_ok
+                      desc: 点击确定按钮
+                      action: click
+                      locators:
+                        - { name: "live_btn_ok" ,locateDesc: "确定id",locatorType: "resourceId",locatorValue: 'com.hollyland.cameralive:id/btn_ok' }
+                  - step:
+                      name: assert_live_text
+                      desc: 断言直播界面元素文本是否存在
+                      action: assert_text
+                      locators:
+                        - { name: "assert_live" ,locateDesc: "断言直播界面是否有直播的文本出现",locatorType: "resourceId",locatorValue: 'com.hollyland.cameralive:id/tv_item_tab' }
+                        - { name: "assert_live" ,locateDesc: "断言直播界面是否有直播的图标出现",locatorType: "text",locatorValue: '直播' }
+                      params:
+                        element_type: "text"
+                        expect_text: "直播"
+          - case:
+              caseId: 2
+              name: add_live_and_startlive2
+              status: 开启
+              level: P1
+              desc: 测试网易云音乐搜索音乐1
+              globalVal:
+                - { name: "push_url_name", value: "${{random_name}}" }
+                - { name: "push_url", value: "rtmp://192.168.69.109:1935/stream/pc_test2" }
+                - { name: "timeout", value: "5" }
+              # 前置步骤：
+              presteps:
+                - step:
+                    name: open_app
+                    desc: 打开app
+                    action: open
+                    params:
+                      packageName: com.hollyland.cameralive
+                      activityName: com.hollyland.cameralive.ui.CameraLiveMainActivity
+                - step:
+                    name: wait_loading
+                    desc: 等待页面加载完成
+                    action: wait
+                    params:
+                      senconds: 3
+              # 后置步骤：
+              poststeps:
+                - step:
+                    name: close_app
+                    desc: 关闭应用
+                    action: close
+                    params:
+                      packageName: com.hollyland.cameralive
+              # 测试步骤：
+              steps:
+                # 点击每日推荐
+                - step:
+                    name: notification
+                    desc: 下拉打开通知栏
+                    action: notification
+                    params:
+                      seconds: 1
+                - step:
+                    name: click_live
+                    desc: 点击直播
+                    action: click
+                    locators:
+                      - { name: "live" ,locateDesc: "直播文本",locatorType: "text",locatorValue: '直播' }
+                      - { name: "live" ,locateDesc: "直播图标",locatorType: "resourceId",locatorValue: 'com.android.systemui:id/holly_qs_living_btn' }
+                - step:
+                    name: click_add_push_btn
+                    desc: 点击添加推流地址按钮
+                    action: click
+                    locators:
+                      - { name: "add_push_url_btn" ,locateDesc: "添加推流地址按钮",locatorType: "resourceId",locatorValue: 'com.hollyland.cameralive:id/btn_beauty' }
+                - step:
+                    name: click_add_push_url
+                    desc: 点击添加推流地址
+                    action: click
+                    locators:
+                      - { name: "add" ,locateDesc: "添加推流地址",locatorType: "text",locatorValue: '添加推流地址' }
+                - step:
+                    name: choose_manually_add_push_url
+                    desc: 选择手动添加推流地址
+                    action: click
+                    locators:
+                      - { name: "manual_add" ,locateDesc: "手动添加推流地址",locatorType: "text",locatorValue: '手动添加推流地址' }
+                - step:
+                    name: input_push_url_name
+                    desc: 输入推流地址名称
+                    action: input
+                    locators:
+                      - { name: "input_name" ,locateDesc: "输入推流地址",locatorType: "xpath",locatorValue: '//*[@resource-id="com.hollyland.cameralive:id/lin_push_info_edit"]/android.widget.RelativeLayout[1]' }
+                    params:
+                      value: "${push_url_name}"
+                - step:
+                    name: input_push_url
+                    desc: 输入推流地址
+                    action: input
+                    locators:
+                      - { name: "input_url" ,locateDesc: "输入推流地址",locatorType: "resourceId",locatorValue: 'com.hollyland.cameralive:id/et_push_address' }
+                    params:
+                      value: "${push_url}"
+                - step:
+                    name: swipe_up
+                    desc: 向上滑动
+                    action: swipe_up
+                - step:
+                    name: click_save
+                    desc: 点击保存,完成设置
+                    action: click
+                    locators:
+                      - { name: "save" ,locateDesc: "保存",locatorType: "resourceId",locatorValue: 'com.hollyland.cameralive:id/btn_save_channel' }
+                - step:
+                    name: right_swipe
+                    desc: 右滑回到推流地址增加界面
+                    action: right_swipe
+                - step:
+                    name: click_screen
+                    desc: 点击屏幕任意位置
+                    action: click_screen
+                    params:
+                      x: 180
+                      y: 300
+                - step:
+                    name: assert_live_text
+                    desc: 断言直播界面元素文本是否存在
+                    action: assert_contains2
+                    locators:
+                      - { name: "assert_live" ,locateDesc: "断言直播界面是否有直播的文本出现",locatorType: "resourceId",locatorValue: 'com.hollyland.cameralive:id/tv_item_tab' }
+                      - { name: "assert_live" ,locateDesc: "断言直播界面是否有直播的图标出现",locatorType: "text",locatorValue: '直播' }
+                    params:
+                      actual: "直播"
+                      expected: "直播"
+                - step:
+                    name: find_element
+                    desc: 查找元素是否存在当前页面
+                    action: find_elements
+                    locators:
+                      - { name: "live" ,locateDesc: "直播文本",locatorType: "resourceId",locatorValue: 'com.hollyland.cameralive:id/tv_item_tab' }
+                    params:
+                      timeout: 10
+                - step:
+                    name: click_live_btn
+                    desc: 点击直播按钮
+                    action: click
+                    locators:
+                      - { name: "live_btn_shutter" ,locateDesc: "直播id",locatorType: "resourceId",locatorValue: 'com.hollyland.cameralive:id/btn_shutter' }
+                - step:
+                    name: wait_5
+                    desc: 等待5秒
+                    action: wait
+                    params:
+                      senconds: 5
+                - step:
+                    name: click_quit_live
+                    desc: 点击退出直播
+                    action: click
+                    locators:
+                      - { name: "live_btn_quite" ,locateDesc: "退出id",locatorType: "resourceId",locatorValue: 'com.hollyland.cameralive:id/iv_living_quite' }
+                - step:
+                    name: click_btn_ok
+                    desc: 点击确定按钮
+                    action: click
+                    locators:
+                      - { name: "live_btn_ok" ,locateDesc: "确定id",locatorType: "resourceId",locatorValue: 'com.hollyland.cameralive:id/btn_ok' }
+                - step:
+                    name: assert_live_text
+                    desc: 断言直播界面元素文本是否存在
+                    action: assert_text
+                    locators:
+                      - { name: "assert_live" ,locateDesc: "断言直播界面是否有直播的文本出现",locatorType: "resourceId",locatorValue: 'com.hollyland.cameralive:id/tv_item_tab' }
+                      - { name: "assert_live" ,locateDesc: "断言直播界面是否有直播的图标出现",locatorType: "text",locatorValue: '直播' }
+                    params:
+                      element_type: "text"
+                      expect_text: "直播"
+    - module:
+        name : 模块名称2
+        cases:
+          - case:
+              caseId : 3
+              name: add_live_and_startlive
+              status: 关闭
+              level: P0
+              desc: 添加直播和开启直播2
+              globalVal:
+                - { name: "push_url_name", value: "${{random_name}}" }
+                - { name: "push_url", value: "rtmp://192.168.69.109:1935/stream/pc_test_666" }
+                - { name: "timeout", value: "3" }
+              # 前置步骤：
+              presteps:
+                - step:
+                    name: open_app
+                    desc: 打开app--------------------111
+                    action: open
+                    params:
+                      packageName: com.hollyland.cameralive
+                      activityName: com.hollyland.cameralive.ui.CameraLiveMainActivity
+                - step:
+                    name: wait_loading
+                    desc: 等待页面加载完成-----------11111
+                    action: wait
+                    params:
+                      senconds: 3.0
+              # 后置步骤：
+              poststeps:
+                - step:
+                    name: close_app------------1111111
+                    desc: 关闭应用
+                    action: close
+                    params:
+                      packageName: com.hollyland.cameralive
+              # 测试步骤：
+              steps:
+                # 点击每日推荐
+                - step:
+                    name: notification
+                    desc: 下拉打开通知栏
+                    action: notification
+                    params:
+                      seconds: 1
+                - step:
+                    name: click_live
+                    desc: 点击直播
+                    action: click
+                    locators:
+                      - { name: "live" ,locateDesc: "直播文本",locatorType: "text",locatorValue: '直播' }
+                      - { name: "live" ,locateDesc: "直播图标",locatorType: "resourceId",locatorValue: 'com.android.systemui:id/holly_qs_living_btn' }
+                - step:
+                    name: click_add_push_btn
+                    desc: 点击添加推流地址按钮
+                    action: click
+                    locators:
+                      - { name: "add_push_url_btn" ,locateDesc: "添加推流地址按钮",locatorType: "resourceId",locatorValue: 'com.hollyland.cameralive:id/btn_beauty' }
+                - step:
+                    name: click_add_push_url
+                    desc: 点击添加推流地址
+                    action: click
+                    locators:
+                      - { name: "add" ,locateDesc: "添加推流地址",locatorType: "text",locatorValue: '添加推流地址' }
+                - step:
+                    name: choose_manually_add_push_url
+                    desc: 选择手动添加推流地址
+                    action: click
+                    locators:
+                      - { name: "manual_add" ,locateDesc: "手动添加推流地址",locatorType: "text",locatorValue: '手动添加推流地址' }
+                - step:
+                    name: input_push_url_name
+                    desc: 输入推流地址名称
+                    action: input
+                    locators:
+                      - { name: "input_name" ,locateDesc: "输入推流地址",locatorType: "xpath",locatorValue: '//*[@resource-id="com.hollyland.cameralive:id/lin_push_info_edit"]/android.widget.RelativeLayout[1]' }
+                    params:
+                      value: "${push_url_name}"
+                - step:
+                    name: input_push_url
+                    desc: 输入推流地址
+                    action: input
+                    locators:
+                      - { name: "input_url" ,locateDesc: "输入推流地址",locatorType: "resourceId",locatorValue: 'com.hollyland.cameralive:id/et_push_address' }
+                    params:
+                      value: "${push_url}"
+                - step:
+                    name: swipe_up
+                    desc: 向上滑动
+                    action: swipe_up
+                - step:
+                    name: click_save
+                    desc: 点击保存,完成设置
+                    action: click
+                    locators:
+                      - { name: "save" ,locateDesc: "保存",locatorType: "resourceId",locatorValue: 'com.hollyland.cameralive:id/btn_save_channel' }
+                - step:
+                    name: right_swipe
+                    desc: 右滑回到推流地址增加界面
+                    action: right_swipe
+                - step:
+                    name: click_screen
+                    desc: 点击屏幕任意位置
+                    action: click_screen
+                    params:
+                      x: 180
+                      y: 300
+                - step:
+                    name: assert_live_text
+                    desc: 断言直播界面元素文本是否存在
+                    action: assert_contains2
+                    locators:
+                      - { name: "assert_live" ,locateDesc: "断言直播界面是否有直播的文本出现",locatorType: "resourceId",locatorValue: 'com.hollyland.cameralive:id/tv_item_tab' }
+                      - { name: "assert_live" ,locateDesc: "断言直播界面是否有直播的图标出现",locatorType: "text",locatorValue: '直播' }
+                    params:
+                      actual: "直播"
+                      expected: "直播"
+                - step:
+                    name: find_element
+                    desc: 查找元素是否存在当前页面
+                    action: find_elements
+                    locators:
+                      - { name: "live" ,locateDesc: "直播文本",locatorType: "resourceId",locatorValue: 'com.hollyland.cameralive:id/tv_item_tab' }
+                    params:
+                      timeout: 10
+                - step:
+                    name: click_live_btn
+                    desc: 点击直播按钮
+                    action: click
+                    locators:
+                      - { name: "live_btn_shutter" ,locateDesc: "直播id",locatorType: "resourceId",locatorValue: 'com.hollyland.cameralive:id/btn_shutter' }
+                - step:
+                    name: wait_5
+                    desc: 等待5秒
+                    action: wait
+                    params:
+                      senconds: 5
+                - step:
+                    name: click_quit_live
+                    desc: 点击退出直播
+                    action: click
+                    locators:
+                      - { name: "live_btn_quite" ,locateDesc: "退出id",locatorType: "resourceId",locatorValue: 'com.hollyland.cameralive:id/iv_living_quite' }
+                - step:
+                    name: click_btn_ok
+                    desc: 点击确定按钮
+                    action: click
+                    locators:
+                      - { name: "live_btn_ok" ,locateDesc: "确定id",locatorType: "resourceId",locatorValue: 'com.hollyland.cameralive:id/btn_ok' }
+                - step:
+                    name: assert_live_text
+                    desc: 断言直播界面元素文本是否存在
+                    action: assert_text
+                    locators:
+                      - { name: "assert_live" ,locateDesc: "断言直播界面是否有直播的文本出现",locatorType: "resourceId",locatorValue: 'com.hollyland.cameralive:id/tv_item_tab' }
+                      - { name: "assert_live" ,locateDesc: "断言直播界面是否有直播的图标出现",locatorType: "text",locatorValue: '直播' }
+                    params:
+                      element_type: "text"
+                      expect_text: "直播"
+          - case:
+              caseId: 4
+              name: add_live_and_startlive2
+              status: 关闭
+              level: P0
+              desc: 测试网易云音乐搜索音乐2
+              globalVal:
+                - { name: "push_url_name", value: "${{random_name}}" }
+                - { name: "push_url", value: "rtmp://192.168.69.109:1935/stream/pc_test2" }
+                - { name: "timeout", value: "5" }
+              # 前置步骤：
+              presteps:
+                - step:
+                    name: open_app
+                    desc: 打开app
+                    action: open
+                    params:
+                      packageName: com.hollyland.cameralive
+                      activityName: com.hollyland.cameralive.ui.CameraLiveMainActivity
+                - step:
+                    name: wait_loading
+                    desc: 等待页面加载完成
+                    action: wait
+                    params:
+                      senconds: 3
+              # 后置步骤：
+              poststeps:
+                - step:
+                    name: close_app
+                    desc: 关闭应用
+                    action: close
+                    params:
+                      packageName: com.hollyland.cameralive
+              # 测试步骤：
+              steps:
+                # 点击每日推荐
+                - step:
+                    name: notification
+                    desc: 下拉打开通知栏
+                    action: notification
+                    params:
+                      seconds: 1
+                - step:
+                    name: click_live
+                    desc: 点击直播
+                    action: click
+                    locators:
+                      - { name: "live" ,locateDesc: "直播文本",locatorType: "text",locatorValue: '直播' }
+                      - { name: "live" ,locateDesc: "直播图标",locatorType: "resourceId",locatorValue: 'com.android.systemui:id/holly_qs_living_btn' }
+                - step:
+                    name: click_add_push_btn
+                    desc: 点击添加推流地址按钮
+                    action: click
+                    locators:
+                      - { name: "add_push_url_btn" ,locateDesc: "添加推流地址按钮",locatorType: "resourceId",locatorValue: 'com.hollyland.cameralive:id/btn_beauty' }
+                - step:
+                    name: click_add_push_url
+                    desc: 点击添加推流地址
+                    action: click
+                    locators:
+                      - { name: "add" ,locateDesc: "添加推流地址",locatorType: "text",locatorValue: '添加推流地址' }
+                - step:
+                    name: choose_manually_add_push_url
+                    desc: 选择手动添加推流地址
+                    action: click
+                    locators:
+                      - { name: "manual_add" ,locateDesc: "手动添加推流地址",locatorType: "text",locatorValue: '手动添加推流地址' }
+                - step:
+                    name: input_push_url_name
+                    desc: 输入推流地址名称
+                    action: input
+                    locators:
+                      - { name: "input_name" ,locateDesc: "输入推流地址",locatorType: "xpath",locatorValue: '//*[@resource-id="com.hollyland.cameralive:id/lin_push_info_edit"]/android.widget.RelativeLayout[1]' }
+                    params:
+                      value: "${push_url_name}"
+                - step:
+                    name: input_push_url
+                    desc: 输入推流地址
+                    action: input
+                    locators:
+                      - { name: "input_url" ,locateDesc: "输入推流地址",locatorType: "resourceId",locatorValue: 'com.hollyland.cameralive:id/et_push_address' }
+                    params:
+                      value: "${push_url}"
+                - step:
+                    name: swipe_up
+                    desc: 向上滑动
+                    action: swipe_up
+                - step:
+                    name: click_save
+                    desc: 点击保存,完成设置
+                    action: click
+                    locators:
+                      - { name: "save" ,locateDesc: "保存",locatorType: "resourceId",locatorValue: 'com.hollyland.cameralive:id/btn_save_channel' }
+                - step:
+                    name: right_swipe
+                    desc: 右滑回到推流地址增加界面
+                    action: right_swipe
+                - step:
+                    name: click_screen
+                    desc: 点击屏幕任意位置
+                    action: click_screen
+                    params:
+                      x: 180
+                      y: 300
+                - step:
+                    name: assert_live_text
+                    desc: 断言直播界面元素文本是否存在
+                    action: assert_contains2
+                    locators:
+                      - { name: "assert_live" ,locateDesc: "断言直播界面是否有直播的文本出现",locatorType: "resourceId",locatorValue: 'com.hollyland.cameralive:id/tv_item_tab' }
+                      - { name: "assert_live" ,locateDesc: "断言直播界面是否有直播的图标出现",locatorType: "text",locatorValue: '直播' }
+                    params:
+                      actual: "直播"
+                      expected: "直播"
+                - step:
+                    name: find_element
+                    desc: 查找元素是否存在当前页面
+                    action: find_elements
+                    locators:
+                      - { name: "live" ,locateDesc: "直播文本",locatorType: "resourceId",locatorValue: 'com.hollyland.cameralive:id/tv_item_tab' }
+                    params:
+                      timeout: 10
+                - step:
+                    name: click_live_btn
+                    desc: 点击直播按钮
+                    action: click
+                    locators:
+                      - { name: "live_btn_shutter" ,locateDesc: "直播id",locatorType: "resourceId",locatorValue: 'com.hollyland.cameralive:id/btn_shutter' }
+                - step:
+                    name: wait_5
+                    desc: 等待5秒
+                    action: wait
+                    params:
+                      senconds: 5
+                - step:
+                    name: click_quit_live
+                    desc: 点击退出直播
+                    action: click
+                    locators:
+                      - { name: "live_btn_quite" ,locateDesc: "退出id",locatorType: "resourceId",locatorValue: 'com.hollyland.cameralive:id/iv_living_quite' }
+                - step:
+                    name: click_btn_ok
+                    desc: 点击确定按钮
+                    action: click
+                    locators:
+                      - { name: "live_btn_ok" ,locateDesc: "确定id",locatorType: "resourceId",locatorValue: 'com.hollyland.cameralive:id/btn_ok' }
+                - step:
+                    name: assert_live_text
+                    desc: 断言直播界面元素文本是否存在
+                    action: assert_text
+                    locators:
+                      - { name: "assert_live" ,locateDesc: "断言直播界面是否有直播的文本出现",locatorType: "resourceId",locatorValue: 'com.hollyland.cameralive:id/tv_item_tab' }
+                      - { name: "assert_live" ,locateDesc: "断言直播界面是否有直播的图标出现",locatorType: "text",locatorValue: '直播' }
+                    params:
+                      element_type: "text"
+                      expect_text: "直播"
+
+

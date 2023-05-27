@@ -1,0 +1,87 @@
+*{
+    font-family: 微软雅黑;
+    color: #BBBBBB;
+    font-size: 15px;
+    background-color:#272727;
+}
+
+QListWidget::Item:selected{
+    background:4B6EAF;
+
+}
+QListWidget::Item{
+    padding-top:2px;
+    border: 1px solid #74787c;
+    font-size: 2px;
+
+}
+
+
+QListWidget::Item:hover{
+    background: #4B6EAF;
+}
+
+
+QTextEdit{
+    border: 1px solid #74787c;
+    border-width: 1px 1px 1px 1px;
+
+}
+
+QLineEdit{
+    border: 1px solid #74787c;
+    border-width: 1px 1px 1px 1px;
+}
+
+QMenuBar::item:selected, QTreeView::branch:selected{
+    background: #4B6EAF;
+}
+
+QMenuBar::item {
+    spacing: 3px;
+    padding: 2px 10px;
+    border-radius: 5px;
+}
+QMenu::item:selected {
+    color: rgb(255,255,255);
+    background-color: #4B6EAF;
+}
+
+
+
+FuncListWidget::Item{
+    border-style: inset;
+    border-radius: 8px;
+    border: 1px solid #999999;
+    margin:0px 1px 0px 0px
+}
+
+UsedListWidget::Item{
+    border: 2px solid #999999;
+    margin:0px 0px 1px 0px
+}
+
+UsedListWidget::Item:selected{
+    background: #99CCFF;
+}
+
+
+
+QToolButton:hover{
+    background: #4B6EAF;
+}
+
+
+QPushButton{
+
+    border: 1px groove gray;
+    border-style: outset;
+}
+
+QPushButton:hover{
+    border-radius: 1px;
+    border: 1px lightskyblue;
+    border-style: outset;
+}
+
+

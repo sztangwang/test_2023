@@ -1,0 +1,11 @@
+# Default ignored files
+.idea
+.pytest_cache
+.package.spec
+./logs
+*.log
+/venv/
+__pycache__
+*.pyc
+
+

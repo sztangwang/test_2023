@@ -1,0 +1,61 @@
+env:
+  release:
+    app_info:
+      app_activity: com.wx.mp.core_test.MainActivity
+      app_file: app_test.apk
+      app_name: app_test
+      app_package: com.wx.mp.core_test
+      app_version: 1.0.0
+    device_info:
+      device_id: lilm231
+      device_ip: 192.168.42.107:5555
+      device_name: abc
+      device_type: 1
+      wda: com.facebook.WebDriverAgentRunner.utx.xctrunner
+    domain: http://test.com
+    log_info:
+      log_file: log.txt
+      log_level: DEBUG
+      log_path: /Users/xxx/PycharmProjects/xxx/log
+    mysql_engine: mysql+pymysql://root:123456@localhost:3306/test?charset=utf8
+    run_info:
+      case_file: case_demo2.yaml
+      case_path: D:\python-workspace\Windows_Agent\compoment\atx2agent\core\testcases\
+      logcat: false
+      record: false
+      report_path: ./report
+      report_result_path: ./report/result
+      rerun_delay: 1
+      reruns: 1
+      screenshot: false
+  test:
+    app_info:
+      app_activity: com.wx.mp.core_test.MainActivity
+      app_file: app_test.apk
+      app_name: app_test
+      app_package: com.wx.mp.core_test
+      app_version: 1.0.0
+    device_info:
+      device_id: lilm231
+      device_ip: 192.168.42.107:5555
+      device_name: test11111
+      device_type: 1
+      wda: com.facebook.WebDriverAgentRunner.utx.xctrunner
+    domain: http://test.com
+    log_info:
+      log_file: log.txt
+      log_level: DEBUG
+      log_path: /Users/xxx/PycharmProjects/xxx/log
+    mysql_engine: mysql+pymysql://root:123456@localhost:3306/test?charset=utf8
+    run_info:
+      case_file: case_demo2.yaml
+      case_path: \core\testcases\
+      logcat: false
+      record: false
+      report_path: ./report
+      report_result_path: ./report/result
+      rerun_delay: 1
+      reruns: 1
+      screenshot: false
+    user_info:
+      xxxxx: xxx2323

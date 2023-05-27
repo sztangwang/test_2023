@@ -1,0 +1,67 @@
+devices:
+  '17089446':
+    device_id: '17089446'
+    device_type: C4701
+    info: '{"deviceId": 1, "deviceSn": "17089446", "systemVersion": "qti/qssi/qssi:10/QKQ1.210511.001/1068:user/test-keys",
+      "deviceState": 1004, "appVersion": "1.0.1", "projectName": "C4701"}'
+    status: 1
+  17089c4a:
+    device_id: 17089c4a
+    device_type: C4701
+    info: '{"deviceId": 1, "deviceSn": "17089c4a", "systemVersion": "qti/qssi/qssi:10/QKQ1.210511.001/1034:user/test-keys",
+      "deviceState": 1004, "appVersion": "1.0.1", "projectName": "C4701"}'
+    status: 1
+  1708c23d:
+    device_id: 1708c23d
+    device_type: C4701
+    info: '{"deviceId": 1, "deviceSn": "1708c23d", "systemVersion": "qti/qssi/qssi:10/QKQ1.210511.001/1124:user/test-keys",
+      "deviceState": 1004, "appVersion": "1.0.1", "projectName": "C4701"}'
+    status: 1
+  1708d644:
+    device_id: 1708d644
+    device_type: C4701
+    info: '{"deviceId": 2, "deviceSn": "1708d644", "systemVersion": "qti/qssi/qssi:10/QKQ1.210511.001/928:user/test-keys",
+      "deviceState": 1004, "appVersion": "1.0.1", "projectName": "C4701"}'
+    status: 1
+  1708fa47:
+    device_id: 1708fa47
+    device_type: C4701
+    info: '{"deviceId": 1, "deviceSn": "1708fa47", "systemVersion": "qti/qssi/qssi:10/QKQ1.210511.001/1136:user/test-keys",
+      "deviceState": 1004, "appVersion": "1.0.1", "projectName": "C4701"}'
+    status: 1
+  17096c47:
+    device_id: 17096c47
+    device_type: C4701
+    info: '{"deviceId": 2, "deviceSn": "17096c47", "systemVersion": "qti/qssi/qssi:10/QKQ1.210511.001/1158:user/test-keys",
+      "deviceState": 1004, "appVersion": "1.0.1", "projectName": "C4701"}'
+    status: 1
+  1709aa44:
+    device_id: 1709aa44
+    device_type: C4701
+    info: '{"deviceId": 1, "deviceSn": "1709aa44", "systemVersion": "qti/qssi/qssi:10/QKQ1.210511.001/1020:userdebug/test-keys",
+      "deviceState": 1004, "appVersion": "1.0.1", "projectName": "C4701"}'
+    status: 1
+  1709e242:
+    device_id: 1709e242
+    device_type: C4701
+    info: '{"deviceId": 1, "deviceSn": "1709e242", "systemVersion": "qti/qssi/qssi:10/QKQ1.210511.001/1167:user/test-keys",
+      "deviceState": 1004, "appVersion": "1.0.1", "projectName": "C4701"}'
+    status: 1
+  7040703d:
+    device_id: 7040703d
+    device_type: C4701
+    info: '{"deviceId": 2, "deviceSn": "7040703d", "systemVersion": "qti/qssi/qssi:10/QKQ1.210511.001/1158:user/test-keys",
+      "deviceState": 1004, "appVersion": "1.0.1", "projectName": "C4701"}'
+    status: 1
+  70408a36:
+    device_id: 70408a36
+    device_type: C4701
+    info: '{"deviceId": 1, "deviceSn": "70408a36", "systemVersion": "qti/qssi/qssi:10/QKQ1.210511.001/1136:user/test-keys",
+      "deviceState": 1004, "appVersion": "1.0.1", "projectName": "C4701"}'
+    status: 1
+  7040d244:
+    device_id: 7040d244
+    device_type: C4701
+    info: '{"deviceId": 1, "deviceSn": "7040d244", "systemVersion": "qti/qssi/qssi:10/QKQ1.210511.001/1068:user/test-keys",
+      "deviceState": 1004, "appVersion": "1.0.1", "projectName": "C4701"}'
+    status: 1
